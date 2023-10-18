@@ -1,0 +1,49 @@
+env:
+  browser: true
+  commonjs: true
+  es6: true
+  es2022: true
+  node: true
+  jest: true
+extends:
+  - eslint:recommended
+  - plugin:prettier/recommended
+  - plugin:@typescript-eslint/recommended
+parser: '@typescript-eslint/parser'
+parserOptions:
+  ecmaVersion: latest
+plugins:
+  - jest
+  - playwright
+  - '@typescript-eslint'
+  - eslint-plugin-import
+rules:
+  playwright/no-focused-test: "error"
+  no-undef: [ 'error', { 'typeof': false } ]
+  jest/no-focused-tests: 'error'
+  jest/valid-expect: 'error'
+  jest/no-identical-title: 'error'
+  max-len: [ 'error', { 'code': 130 } ]
+  camelcase: off
+  prefer-regex-literals: off
+  class-methods-use-this: off
+  no-restricted-syntax: off
+  no-underscore-dangle: off
+  no-unused-vars: error
+  no-await-in-loop: off
+  import/extensions:
+    - error
+    - ignorePackages
+    - {
+        "": "never",
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+ignorePatterns: ['node_modules', 'dist']
+globals:
+  page: writable
+  browser: writable
+  context: writable
+  jestPuppeteer: writable

@@ -1,0 +1,11 @@
+node_modules/
+playwright-report/
+allure-results/
+allure-report/
+junit-results/
+dist/
+.idea
+.vscode
+.env
+junit.xml
+.DS_Store
